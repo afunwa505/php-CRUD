@@ -97,7 +97,7 @@ echo $statusMsg;
 </head>
 <body>
 
-<form action="upload.php" method="post" enctype="multipart/form-data">
+<form action="" method="post" enctype="multipart/form-data">
     <p>Select Image File to Upload:</p>
     <input type="file" name="file"> <br>
     <input type="submit" name="submit" value="Upload">
@@ -115,7 +115,8 @@ if($result->num_rows > 0){
         $imageURL = 'images/'.$row["image"];
 ?>
     
-    <img src="<?php echo $imageURL; ?>" alt="pic" /><a href="img_delete.php?id=<?php echo $row['id']?>" class="delete">DELETE</a>
+    <img src="<?php echo $imageURL; ?>" alt="pic" /><a href="download.php?file=<?php echo $imageURL ?>">download</a> 
+    <a href="img_delete.php?id=<?php echo $row['id']?>" class="delete">DELETE</a>
     
 <?php }
 }else{ ?>
